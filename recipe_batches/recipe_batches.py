@@ -2,8 +2,21 @@
 
 import math
 
+
 def recipe_batches(recipe, ingredients):
-  pass 
+  if set(recipe.keys()) == set(ingredients.keys()):
+    r = recipe.items()
+    i = ingredients.items()
+    batches = []
+    for x in i:
+      for y in r:
+        if x[0] == y[0]:
+          batches.append(x[1] // y[1])
+
+    return min(batches)
+
+  else:
+    return 0
 
 
 if __name__ == '__main__':
