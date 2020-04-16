@@ -4,10 +4,11 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
-  if set(recipe.keys()) == set(ingredients.keys()):
+  if recipe.keys() == ingredients.keys():
     r = recipe.items()
     i = ingredients.items()
     batches = []
+
     for x in i:
       for y in r:
         if x[0] == y[0]:
